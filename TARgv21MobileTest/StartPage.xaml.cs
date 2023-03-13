@@ -45,6 +45,7 @@ namespace TARgv21MobileTest
             Button Editor_btn = new Button
             {
                 Text = "Editor Page",
+                TextColor = Color.Black,
                 BackgroundColor = Color.White
             };
             Button Timer_btn = new Button
