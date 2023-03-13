@@ -12,6 +12,33 @@ namespace TARgv21MobileTest
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class StartPage : ContentPage
     {
+        List<ContentPage> pages = new List<ContentPage>()
+        {
+            new EditorPage(),
+            new TimerPage(),
+            new BoxPage(),
+            new DateTimePage(),
+            new StepperSlider(),
+            new Rgb()
+        };
+
+        List<string> textBtn = new List<string>()
+        {
+            "Editor Page",
+            "Timer Page",
+            "BoxView Page",
+            "Date Time",
+            "Stepper Slider Page",
+            "Rgb Page"
+        };
+        List<string> colorBtn = new List<string>()
+        {
+            "White",
+            "LightBlue",
+            "LightGreen"
+        };
+        Random rnd = new Random();
+        
         public StartPage()
         {
             //InitializeComponent();
@@ -30,29 +57,27 @@ namespace TARgv21MobileTest
                 Text = "BoxView Page",
                 BackgroundColor = Color.LightGreen
             };
+
             StackLayout st = new StackLayout();
-            st.Children.Add(Editor_btn);
-            st.Children.Add(Timer_btn);
-            st.Children.Add(Box_btn);
+            for (int i = 0; i < pages.Count; i++)
+            {
+                Button button = new Button
+                {
+                    Text = textBtn[i],
+                    //BackgroundColor = Color.colorBtn[i],
+                    BackgroundColor = Color.FromRgb(rnd.Next(0,255), rnd.Next(0, 255), rnd.Next(0, 255)),
+                    TabIndex = i
+                };
+                st.Children.Add(button);
+                button.Clicked += Button_Clicked;
+            }
             Content = st;
-            Editor_btn.Clicked += Editor_btn_Clicked;
-            Timer_btn.Clicked += Timer_btn_Clicked;
-            Box_btn.Clicked += Box_btn_Clicked;
         }
 
-        private async void Box_btn_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new BoxPage());
-        }
-
-        private async void Timer_btn_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new TimerPage());
-        }
-
-        private async void Editor_btn_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new EditorPage());
+            Button b = sender as Button;
+            await Navigation.PushAsync(pages[b.TabIndex]);
         }
     }
 }
