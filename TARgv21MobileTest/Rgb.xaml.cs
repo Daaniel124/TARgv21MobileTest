@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -83,8 +84,40 @@ namespace TARgv21MobileTest
             };
             btn.Clicked += Btn_Clicked;
 
-            StackLayout st = new StackLayout { Children = { box, sld, lbl, sld2, lbl2, sld3, lbl3, stp, lbl4, btn } };
-            Content = st;
+            /*StackLayout st = new StackLayout { Children = { box, sld, lbl, sld2, lbl2, sld3, lbl3, stp, lbl4, btn } };
+            Content = st;*/
+            AbsoluteLayout abs = new AbsoluteLayout { Children = { box, sld, lbl, sld2, lbl2, sld3, lbl3, stp, lbl4, btn } };
+
+            AbsoluteLayout.SetLayoutBounds(box, new Rectangle(0.0, 0.0, 400, 400));
+            AbsoluteLayout.SetLayoutFlags(box, AbsoluteLayoutFlags.PositionProportional);
+
+            AbsoluteLayout.SetLayoutBounds(sld, new Rectangle(0.1, 0.5, 400, 50));
+            AbsoluteLayout.SetLayoutFlags(sld, AbsoluteLayoutFlags.PositionProportional);
+
+            AbsoluteLayout.SetLayoutBounds(lbl, new Rectangle(0.5, 0.55, 300, 50));
+            AbsoluteLayout.SetLayoutFlags(lbl, AbsoluteLayoutFlags.PositionProportional);
+
+            AbsoluteLayout.SetLayoutBounds(sld2, new Rectangle(0.1, 0.6, 400, 50));
+            AbsoluteLayout.SetLayoutFlags(sld2, AbsoluteLayoutFlags.PositionProportional);
+
+            AbsoluteLayout.SetLayoutBounds(lbl2, new Rectangle(0.5, 0.65, 300, 50));
+            AbsoluteLayout.SetLayoutFlags(lbl2, AbsoluteLayoutFlags.PositionProportional);
+
+            AbsoluteLayout.SetLayoutBounds(sld3, new Rectangle(0.1, 0.7, 400, 50));
+            AbsoluteLayout.SetLayoutFlags(sld3, AbsoluteLayoutFlags.PositionProportional);
+
+            AbsoluteLayout.SetLayoutBounds(lbl3, new Rectangle(0.5, 0.75, 300, 50));
+            AbsoluteLayout.SetLayoutFlags(lbl3, AbsoluteLayoutFlags.PositionProportional);
+
+            AbsoluteLayout.SetLayoutBounds(stp, new Rectangle(0.5, 0.8, 300, 50));
+            AbsoluteLayout.SetLayoutFlags(stp, AbsoluteLayoutFlags.PositionProportional);
+
+            AbsoluteLayout.SetLayoutBounds(lbl4, new Rectangle(0.5, 0.9, 300, 50));
+            AbsoluteLayout.SetLayoutFlags(lbl4, AbsoluteLayoutFlags.PositionProportional);
+
+            AbsoluteLayout.SetLayoutBounds(btn, new Rectangle(0.5, 0.95, 300, 50));
+            AbsoluteLayout.SetLayoutFlags(btn, AbsoluteLayoutFlags.PositionProportional);
+            Content = abs;
         }
 
         private void Btn_Clicked(object sender, EventArgs e)
