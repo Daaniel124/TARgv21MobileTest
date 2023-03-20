@@ -22,7 +22,6 @@ namespace TARgv21MobileTest
             new Rgb(),
             new Frame_Page(),
             new Frame_page_grid(),
-            new Image_Page(),
         };
 
         List<string> textBtn = new List<string>()
@@ -35,7 +34,7 @@ namespace TARgv21MobileTest
             "Rgb Page",
             "Frame Page",
             "Frame Page Grid",
-            "Image Page"
+            "Image Page",
         };
         List<string> colorBtn = new List<string>()
         {
