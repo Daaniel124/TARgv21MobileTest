@@ -19,7 +19,10 @@ namespace TARgv21MobileTest
             new BoxPage(),
             new DateTimePage(),
             new StepperSlider(),
-            new Rgb()
+            new Rgb(),
+            new Frame_Page(),
+            new Frame_page_grid(),
+            new Image_Page(),
         };
 
         List<string> textBtn = new List<string>()
@@ -29,7 +32,10 @@ namespace TARgv21MobileTest
             "BoxView Page",
             "Date Time",
             "Stepper Slider Page",
-            "Rgb Page"
+            "Rgb Page",
+            "Frame Page",
+            "Frame Page Grid",
+            "Image Page"
         };
         List<string> colorBtn = new List<string>()
         {
@@ -42,7 +48,7 @@ namespace TARgv21MobileTest
         public StartPage()
         {
             //InitializeComponent();
-            Button Editor_btn = new Button
+            /*Button Editor_btn = new Button
             {
                 Text = "Editor Page",
                 TextColor = Color.Black,
@@ -57,7 +63,7 @@ namespace TARgv21MobileTest
             {
                 Text = "BoxView Page",
                 BackgroundColor = Color.LightGreen
-            };
+            };*/
 
             StackLayout st = new StackLayout();
             for (int i = 0; i < pages.Count; i++)
