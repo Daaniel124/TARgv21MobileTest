@@ -16,7 +16,10 @@ namespace TARgv21MobileTest
         TableView table;
         SwitchCell sc, sc2;
         ImageCell ic;
-        TableSection foto, num;
+        TableSection foto;
+        ViewCell num;
+        Button btn;
+        
         public TablePage()
         {
             sc = new SwitchCell { Text = "Näita veel" };
@@ -25,7 +28,10 @@ namespace TARgv21MobileTest
             sc2 = new SwitchCell { Text = "Hellista" };
             sc2.OnChanged += Sc2_OnChanged;
 
-            num = new TableSection();
+            btn = new Button { Text = "Text" };
+            num = new ViewCell
+            {
+            };
 
             ic = new ImageCell
             {
@@ -76,7 +82,18 @@ namespace TARgv21MobileTest
 
         private void Sc2_OnChanged(object sender, ToggledEventArgs e)
         {
-            throw new NotImplementedException();
+            if (e.Value)
+            {
+                foto.Title = "Number";
+                foto.Add(ic);
+                sc.Text = "Peida";
+            }
+            else
+            {
+                foto.Title = "";
+                foto.Remove(ic);
+                sc.Text = "Näita";
+            }
         }
 
         private void Sc_OnChanged(object sender, ToggledEventArgs e)
