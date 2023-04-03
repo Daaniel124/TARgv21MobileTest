@@ -76,7 +76,7 @@ namespace TARgv21MobileTest
                     }
                    
                 }
-                _ = DisplayAlert("Примеры", "Вы ответили правильно на " + answersTrue + " пример/ов из " + answers, "Ок");
+                _ = DisplayAlert("Примеры", "Вы ответили правильно " + answersTrue + " раз/а из " + answers, "Ок");
             }
         }
 

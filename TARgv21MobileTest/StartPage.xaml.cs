@@ -23,7 +23,9 @@ namespace TARgv21MobileTest
             new Frame_Page(),
             new Frame_page_grid(),
             new PopUpPage(),
-            new Puzzles()
+            new Puzzles(),
+            new PickerPage(),
+            new TablePage(),
         };
 
         List<string> textBtn = new List<string>()
@@ -37,7 +39,9 @@ namespace TARgv21MobileTest
             "Frame Page",
             "Frame Page Grid",
             "PopUp page",
-            "Puzzles"
+            "Puzzles",
+            "Picker page",
+            "Table page"
         };
         List<string> colorBtn = new List<string>()
         {
