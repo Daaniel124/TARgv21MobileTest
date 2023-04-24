@@ -26,6 +26,7 @@ namespace TARgv21MobileTest
             new Puzzles(),
             new PickerPage(),
             new TablePage(),
+            new FromFileToList(),
         };
 
         List<string> textBtn = new List<string>()
@@ -41,7 +42,8 @@ namespace TARgv21MobileTest
             "PopUp page",
             "Puzzles",
             "Picker page",
-            "Table page"
+            "Table page",
+            "Files page"
         };
         List<string> colorBtn = new List<string>()
         {
